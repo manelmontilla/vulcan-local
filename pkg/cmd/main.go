@@ -53,7 +53,7 @@ func Run(cfg *config.Config, log *logrus.Logger) (int, error) {
 		}
 	}
 
-	err = generator.ImportRepositories(cfg, log)
+	err = config.ImportRepositories(cfg, log)
 	if err != nil {
 		return config.ErrorExitCode, fmt.Errorf("unable to generate checks: %w", err)
 	}
